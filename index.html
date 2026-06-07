@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> ͞= ☆    YUKA   .  ࿁</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans TC",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f7f5;
+    color:#333;
+}
+
+nav{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.hero{
+    scroll-margin-top:100px;
+}
+
+section{
+    padding:80px 10%;
+    scroll-margin-top:100px;
+}
+
+/* 導覽列 */
+nav{
+    background:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    position:sticky;
+    top:0;
+    .hero{
+    scroll-margin-top:100px;
+}
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:#333;
+    text-decoration:none;
+    transition:.3s;
+    position:relative;
+}
+
+.commission-status{
+    background:#eaf8ef;
+    color:#2d7a46;
+
+    padding:8px 16px;
+    border-radius:999px;
+
+    font-size:14px;
+    font-weight:600;
+
+    border:1px solid #b8e0c2;
+}
+
+nav a:visited{
+    color:#333;
+}
+
+nav a:hover{
+    opacity:0.6;
+}
+
+/* 底線動畫 */
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#333;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* 首頁 */
+.hero{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:clamp(36px, 8vw, 60px);
+}
+
+.hero p{
+    font-size:18px;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:15px 35px;
+    background:#1f1f1f;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn-outline{
+    padding:15px 35px;
+    border:2px solid #333;
+    color:#333;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    background:#333;
+    color:white;
+    transform:translateY(-3px);
+}
+
+/* 區塊 */
+section{
+    padding:80px 10%;
+    scroll-margin-top:100px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:50px;
+}
+
+/* 作品集 */
+.gallery{
+    column-count: 3;
+    column-gap: 20px;
+    padding: 30px 0 20px 0;
+}
+
+.work{
+    break-inside: avoid;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.work img{
+    width:100%;
+    height:auto;
+    display:block;
+
+    transition: transform .4s ease;
+}
+
+.work:hover{
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
+}
+
+.work:hover img{
+    transform: scale(1.02);
+}
+
+.work-info{
+    padding:18px;
+}
+
+.work-info h3{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:5px;
+    letter-spacing:0.5px;
+}
+
+.work-info span{
+    font-size:13px;
+    color:#888;
+    letter-spacing:1px;
+}
+
+/* 價目表 */
+.price-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.price-card{
+    background:white;
+    width:250px;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.price-card h3,
+.price{
+    text-align:center;
+}
+
+.detail{
+    text-align:left;
+    line-height:1.8;
+}
+
+.price{
+    font-size:32px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+/* 流程 */
+.process{
+    max-width:900px;
+    margin:auto;
+}
+
+.step{
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+
+    margin-bottom:30px;
+
+    background:white;
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.step:hover{
+    transform:translateY(-3px);
+}
+
+.number{
+    min-width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#333;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+    font-size:18px;
+}
+
+.content h3{
+    margin-bottom:8px;
+}
+
+.content p{
+    color:#666;
+    line-height:1.8;
+}
+
+.details-card{
+    max-width:800px;
+    margin:auto;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.details-card h3{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.details-card h3:first-child{
+    margin-top:0;
+}
+
+.details-card p{
+    line-height:1.8;
+    color:#555;
+}
+
+.contact-card{
+    max-width:600px;
+    margin:auto;
+
+    background:white;
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.contact-card a{
+    display:block;
+    margin-top:15px;
+
+    color:#333;
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.contact-card a:hover{
+    opacity:.7;
+}
+
+.contact-card p{
+    margin-top:15px;
+    color:#555;
+    line-height:1.8;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:white;
+    margin-top:50px;
+}
+
+/* 社群連結 */
+.social-links{
+    margin:20px 0;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    text-decoration:none;
+    color:#555;
+
+    transition:.3s;
+}
+
+.social-links a:hover{
+    color:#000;
+}
+
+/* 自我介紹 */
+.about{
+    padding:40px 10% 80px;
+}
+
+.about-card{
+    max-width:900px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+
+    background:white;
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.about-card img{
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    margin-bottom:15px;
+}
+
+.about-text p{
+    line-height:1.9;
+    color:#555;
+}
+
+/* 初始狀態（隱藏） */
+.hero,
+.about-card,
+.gallery,
+.price-box,
+.process{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp .8s ease forwards;
+}
+
+/* 讓每個區塊延遲出現 */
+.hero{ animation-delay:0.1s; }
+.about-card{ animation-delay:0.3s; }
+.gallery{ animation-delay:0.5s; }
+.price-box{ animation-delay:0.7s; }
+.process{ animation-delay:0.9s; }
+
+/* 動畫本體 */
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* 隱藏預設滑鼠（可選） */
+/* body{
+    cursor:none;
+} */
+
+.cursor-glow{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:25px;
+    height:25px;
+
+    background:rgba(0,0,0,0.15);
+    border-radius:50%;
+
+    pointer-events:none;
+    transform:translate(-50%, -50%);
+    transition:transform 0.08s linear;
+
+    mix-blend-mode: multiply;
+
+    z-index:9999;
+}
+
+/* 手機版 */
+@media (max-width:768px){
+
+    /* 導覽列 */
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    /* 首頁 */
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    /* 自我介紹 */
+    .about-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-card img{
+        width:140px;
+        height:140px;
+    }
+
+    /* 瀑布流改成單欄 */
+    .gallery{
+        column-count:1;
+    }
+
+    /* 價格卡片 */
+    .price-card{
+        width:100%;
+    }
+
+    /* 流程卡片 */
+    .step{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .number{
+        margin-bottom:10px;
+    }
+
+    /* Hero按鈕 */
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+        align-items:center;
+    }
+
+    .btn,
+    .btn-outline{
+        width:250px;
+        text-align:center;
+    }
+}
+
+@media (max-width:1024px){
+
+    .gallery{
+        column-count:2;
+    }
+
+}
+
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">YUKA'S ART</div>
+
+    <ul>
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#about">關於我</a></li>
+        <li><a href="#portfolio">作品集</a></li>
+        <li><a href="#price">委託價格</a></li>
+        <li><a href="#details">委託詳情</a></li>
+        <li><a href="#process">委託流程</a></li>
+    </ul>
+
+    <div class="commission-status">
+        ✦ 委託少量接單中 ✦
+    </div>
+    
+</nav>
+
+<div class="hero" id="home">
+    <h1>✦ YUKA'S ATELIER ✦</h1>
+
+    <p>日系插畫｜原創角色｜稿件委託</p>
+
+    <div class="hero-buttons">
+
+        <a href="#price" class="btn">
+            查看委託價格
+        </a>
+
+        <a href="https://app.notion.com/p/2026-378514084c9980c0a80ef2a528d6f6cc?source=copy_link"
+           target="_blank"
+           class="btn-outline">
+            查看排單
+        </a>
+
+    </div>
+
+</div>
+
+<section id="about" class="about">
+
+    <div class="about-card">
+
+        <img src="繪圖/IMG_4790.jpg" alt="YUKA">
+
+        <div class="about-text">
+            <h2>About Me</h2>
+
+            <p>
+                大家好呀 這裡是yuka✦<br><br>
+
+                喜歡繪製日系插畫、原創角色與帶有故事感的作品。
+                畫風偏向柔和的色彩，希望透過插畫記錄角色獨特魅力。
+
+                <br><br>
+
+                目前提供胸像、半身、組合頁與表情差分委託，
+                歡迎帶著你的OC來找我創作 ✧
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="portfolio">
+    <h2 class="section-title">作品集</h2>
+
+    <div class="gallery">
+
+        <div class="work">
+            <img src="繪圖/胸像1.png">
+
+            <div class="work-info">
+                <h3>Portrait Commission</h3>
+                <span>胸像委託</span>
+            </div>
+        </div>
+
+        <div class="work">
+            <img src="繪圖/委託1.png">
+
+            <div class="work-info">
+                <h3>Atmosphere Illustration</h3>
+                <span>半身氛圍插圖</span>
+            </div>
+        </div>
+
+        <div class="work">
+            <img src="繪圖/組合頁.png">
+
+            <div class="work-info">
+                <h3>Character Sheet</h3>
+                <span>組合頁設計</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="price">
+    <h2 class="section-title">委託價格</h2>
+
+    <div class="price-box">
+
+       <details class="price-card">
+    <summary>
+        <h3>胸像委託</h3>
+        <div class="price">700upNTD</div>
+    </summary>
+
+    <div class="detail">
+        尺寸：3894×4093px<br>
+        人數：1人<br>
+        背景：純色<br>
+        修改：草稿2次免費
+    </div>
+</details>
+
+        <details class="price-card">
+    <summary>
+        <h3>半身氛圍插圖</h3>
+        <div class="price">1400upNTD</div>
+    </summary>
+
+    <div class="detail">
+        尺寸：3071x4488px<br>
+        人數：1人<br>
+        背景：簡易風景/漸層背景<br>
+        修改：草稿2次免費
+    </div>
+</details>
+<details class="price-card">
+    <summary>
+        <h3>組合頁設計</h3>
+        <div class="price">2300upNTD</div>
+    </summary>
+
+    <div class="detail">
+        尺寸：5660×3070px<br>
+        人數：1人<br>
+        包含：胸像+半身氛圍插圖+表情差分×3<br>
+        修改：草稿2次免費
+    </div>
+</details>
+
+        <details class="price-card">
+    <summary>
+        <h3>表情差分</h3>
+        <div class="price">450NTD</div>
+    </summary>
+
+    <div class="detail">
+        一組3種表情<br>
+        可搭配胸像／半身加購
+    </div>
+</details>
+</section>
+
+<section id="details">
+
+    <h2 class="section-title">委託詳情</h2>
+
+    <div class="details-card">
+
+         <h3>注意事項</h3>
+        <p>
+            • 委託圖默認我方可以公開展示稿件，需要延後發佈麻煩事前告知 <br>
+            • 會挑設，偏好類型是少女
+        </p>
+
+        <h3>付款方式</h3>
+        <p>
+            • 中信無卡 / 轉帳 <br>
+            請於收到付款帳號後五天內付款，未在期限內付款將自動取消訂單，並後續不再接取同用戶的訂單。
+        </p>
+
+        <h3>工期</h3>
+        <p>
+            • 約 7～40 天不等，依委託項目與排單狀況調整。
+        </p>
+
+        <h3>修改規則</h3>
+        <p>
+            • 草稿免費修改 2 次<br>
+            • 完稿後僅接受小幅修改
+        </p>
+
+        <h3>可接內容</h3>
+        <p>
+            • 原創角色 OC<br>
+            • 二創角色<br>
+        </p>
+
+        <h3>不接內容</h3>
+        <p>
+            • 過度獵奇內容
+        </p>
+
+    </div>
+
+</section>
+
+<section id="process">
+    <h2 class="section-title">委託流程</h2>
+
+    <div class="process">
+
+    <div class="step">
+        <div class="number">01</div>
+        <div class="content">
+            <h3>討論需求</h3>
+            <p>私訊提供角色設定、需求與參考資料。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">02</div>
+        <div class="content">
+            <h3>支付訂金</h3>
+            <p>確認委託內容後支付 50% 訂金。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">03</div>
+        <div class="content">
+            <h3>排單確認</h3>
+            <p>安排製作時間並通知預計完成日期。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">04</div>
+        <div class="content">
+            <h3>草稿確認</h3>
+            <p>可免費修改 2 次。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">05</div>
+        <div class="content">
+            <h3>完稿確認</h3>
+            <p>確認作品完成狀態。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">06</div>
+        <div class="content">
+            <h3>支付尾款</h3>
+            <p>支付剩餘費用。</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="number">07</div>
+        <div class="content">
+            <h3>交付檔案</h3>
+            <p>透過 Mail 寄送完成檔案。</p>
+        </div>
+    </div>
+
+</div>
+
+<section id="contact">
+
+    <h2 class="section-title">聯絡方式</h2>
+
+    <div class="contact-card">
+
+        <p>歡迎透過以下方式聯絡我 ✦</p>
+
+        <a href="https://www.instagram.com/1_5yuka/" target="_blank">
+            Instagram @1_5yuka
+        </a>
+
+        <p>Facebook：yu ka</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 YUKA Art Commission
+</footer>
+<div class="cursor-glow"></div>
+<script>
+const cursor = document.querySelector(".cursor-glow");
+
+if(cursor){
+    document.addEventListener("mousemove", (e)=>{
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
+}
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+});
+</script>
+</body>
+</html>
